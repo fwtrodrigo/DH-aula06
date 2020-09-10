@@ -10,7 +10,7 @@ abstract class Conta(var saldo: Double, val cliente: Cliente) {
         saldo += valor
     }
 
-    fun consultarSaldo(): Double {
+    final fun consultarSaldo(): Double {
         return saldo
     }
 }

@@ -1,6 +1,7 @@
 package aula6
 
-class ContaPoupanca(saldo: Double, cliente: Cliente, private var txJuros: Int) : Conta(saldo, cliente) {
+class ContaPoupanca(saldo: Double, cliente: Cliente, private var txJuros: Double) : Conta(saldo, cliente) {
+
     override fun sacar(valor: Double): String {
         if (valor > saldo) {
             return "Saldo insuficiente ${consultarSaldo()}"
@@ -11,6 +12,6 @@ class ContaPoupanca(saldo: Double, cliente: Cliente, private var txJuros: Int) :
     }
 
     fun recolherJuros(): Double {
-        return saldo * txJuros / 100
+        return saldo * txJuros
     }
 }
